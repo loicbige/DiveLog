@@ -29,7 +29,7 @@ class Dive(Base):
     weather = Column(String)
     notes = Column(Text)
 
-    profil_points = relationship("ProfilePoint", back_populates="dive",cascade="all,delete-orphans")
+    profile_points = relationship("ProfilePoint", back_populates="dive",cascade="all,delete-orphan")
 
     equipement = relationship("Equipement", secondary="dive_equipement",back_populates="dives")
 
