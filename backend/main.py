@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine,Base
+from routers.dives import router
 
 from models.dive import Dive
 from models.profile import ProfilePoint
@@ -18,4 +19,4 @@ def create_tables():
 def health():
     return {"status" : "ok"}
 
-
+app.include_router(router)
