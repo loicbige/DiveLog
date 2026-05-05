@@ -2,7 +2,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine,Base
 
-app = FastAPI("divelogAPI", "", "0.0.1")
+app = FastAPI(title="divelogAPI", description="", version="0.0.1")
 
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000", "http://localhost:5173"], allow_methods=["*"], allow_headers=["*"])
+
+@app.on_event("startup")
+def create_tables():
+    Base.metadata.create_all(bind=engine)
+
+@app.get("/health")
+def health():
+    return {"status" : "ok"}
+
 
