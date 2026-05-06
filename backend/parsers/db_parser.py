@@ -26,6 +26,7 @@ def parse_shearwater(file_path: str):
             "min_temp_c": logs.get("MinTemp"),
             "max_temp_c": logs.get("MaxTemp"),
             "duration_s": r["DiveLengthTime"],
+            "avg_sac": float(r["AverageSAC"]) if r["AverageSAC"] else None,
             "site": r["Site"],
             "location": r["Location"],
             "buddy": r["Buddy"],

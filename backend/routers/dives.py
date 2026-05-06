@@ -73,3 +73,5 @@ def import_dive(file: UploadFile = File(...), db: Session = Depends(get_db)):
           db.commit()
           db.refresh(toAdd)          
      return {"imported" : len(dives)}
+
+
