@@ -6,7 +6,7 @@ from routers.dives import router
 from models.dive import Dive
 from models.profile import ProfilePoint
 from models.equipment import Equipement,DiveEquipement
-
+from models.tanks import Tank
 app = FastAPI(title="divelogAPI", description="", version="0.0.1")
 
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000", "http://localhost:5173"], allow_methods=["*"], allow_headers=["*"])

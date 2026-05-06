@@ -15,6 +15,7 @@ class DiveCreate(BaseModel):
       avg_temp_c: Optional[float] = None
       min_temp_c: Optional[float] = None
       max_temp_c: Optional[float] = None
+      weight_kg: Optional[float] = None
       tank_start_bar: Optional[float] = None
       tank_end_bar: Optional[float] = None
       tank_size_l: Optional[float] = None
@@ -33,6 +34,7 @@ class DiveUpdate(BaseModel):
       avg_temp_c: Optional[float] = None
       min_temp_c: Optional[float] = None
       max_temp_c: Optional[float] = None
+      weight_kg: Optional[float] = None
       tank_start_bar: Optional[float] = None
       tank_end_bar: Optional[float] = None
       tank_size_l: Optional[float] = None

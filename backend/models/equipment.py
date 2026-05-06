@@ -14,6 +14,9 @@ class Equipement(Base):
     last_service_date = Column(DateTime)
     notes = Column(Text)
     dives = relationship("Dive",secondary="dive_equipement", back_populates="equipement")
+
+    tanks = relationship("Tank", back_populates="equipement")
+
 class DiveEquipement(Base):
     __tablename__="dive_equipement"
     dive_id = Column(Integer, ForeignKey("dives.id"), primary_key=True)

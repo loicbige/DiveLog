@@ -20,11 +20,9 @@ class Dive(Base):
     min_temp_c = Column(Float)
     max_temp_c = Column(Float)
 
-    tank_start_bar = Column(Float)
-    tank_end_bar = Column(Float)
-    tank_size_l = Column(Float)
     avg_sac = Column(Float)
 
+    weight_kg = Column(Float)
     visibility = Column(String)
     weather = Column(String)
     notes = Column(Text)
@@ -33,4 +31,5 @@ class Dive(Base):
 
     equipement = relationship("Equipement", secondary="dive_equipement",back_populates="dives")
 
+    tanks = relationship("Tank", back_populates="dive", cascade="all, delete-orphan")
     
